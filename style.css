@@ -125,7 +125,7 @@ footer {
 #citation-stat {
     font-weight: 600;
     color: #007bff !important;
-    background: #f0f7ff;
+    background: transparent;
     padding: 10px 15px;
     border-radius: 4px;
     display: inline-block;
