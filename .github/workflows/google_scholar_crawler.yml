@@ -1,0 +1,31 @@
+# This workflow crawls Google Scholar data and updates the repository
+name: Get Google Scholar Data
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs every day at midnight
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install Crawler
+        run: |
+          pip install google-scholar-crawler
+      - name: Run Crawler
+        run: |
+          # Use your Scholar ID here
+          gs_crawler --user EkCwgfYAAAAJ --out results.json
+      - name: Commit and Push
+        run: |
+          git config --global user.name "Scholar Bot"
+          git config --global user.email "bot@github.com"
+          git add results.json
+          git commit -m "Update Scholar citations" || exit 0
+          git push
