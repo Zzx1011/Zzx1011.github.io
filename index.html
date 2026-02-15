@@ -65,10 +65,7 @@
                 return response.json();
             })
             .then(data => {
-                // Update citation count
-                if (data.cit_total) {
-                    document.getElementById('citation-stat').innerText = `Total Citations: ${data.cit_total}`;
-                }
+                
 
                 // Render publications
                 const container = document.getElementById('publication-list');
