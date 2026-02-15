@@ -32,7 +32,15 @@ h2 {
 }
 
 section {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#about, #personal-info {
+    background-color: #f8f9fa;
+    border-left: 4px solid #0077b6;
 }
 
 p {
