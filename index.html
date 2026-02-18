@@ -5,62 +5,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zhixiang Zhang | Fudan & HKUST</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Zhixiang Zhang</h1>
-            <p class="subtitle">Incoming PhD Student at HKUST (Fall 2026) | Fudan University</p>
-            <div class="contact-links">
-                <a href="mailto:zzx031011@gmail.com">Email</a> | 
-                <a href="https://github.com/Zzx1011" target="_blank">GitHub</a> |
-                <a href="https://scholar.google.com/citations?user=EkCwgfYAAAAJ" target="_blank">Google Scholar</a>
+    <!-- Top navigation bar -->
+    <nav class="topnav">
+        <div class="nav-inner">
+            <span class="nav-name">Zhixiang Zhang</span>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#research-interests">Research</a>
+                <a href="#biography">Biography</a>
+                <a href="#services">Services</a>
+                <a href="#publications">Publications</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-wrapper">
+        <!-- Hero / Profile -->
+        <header class="hero">
+            <div class="hero-avatar">
+                <div class="avatar-placeholder">ZZ</div>
+            </div>
+            <div class="hero-info">
+                <h1>Zhixiang Zhang</h1>
+                <p class="hero-title">Incoming PhD Student at HKUST (Fall 2026)</p>
+                <p class="hero-affil">
+                    <i class="fas fa-university"></i>&nbsp;Fudan University &nbsp;·&nbsp;
+                    <i class="fas fa-map-marker-alt"></i>&nbsp;Shanghai, China
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:zzx031011@gmail.com" class="btn-link">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="https://github.com/Zzx1011" target="_blank" class="btn-link">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=EkCwgfYAAAAJ" target="_blank" class="btn-link">
+                        <i class="fas fa-graduation-cap"></i> Google Scholar
+                    </a>
+                </div>
             </div>
         </header>
 
         <main>
+            <!-- About -->
             <section id="about">
-                <h2>About Me</h2>
-                <p>I am currently an undergraduate student majoring in Software Engineering at <strong>Fudan University</strong>. I am honored to be joining <strong>The Hong Kong University of Science and Technology (HKUST)</strong> as a PhD student in the Fall of 2026.</p>
+                <h2><span class="section-icon"><i class="fas fa-user"></i></span>About Me</h2>
+                <p>I am currently an undergraduate student majoring in <strong>Software Engineering</strong> at <strong>Fudan University</strong>. I am honored to be joining <strong>The Hong Kong University of Science and Technology (HKUST)</strong> as a PhD student in Fall 2026.</p>
+                <p>My research lies at the intersection of <em>artificial intelligence</em> and <em>security</em>, with a particular focus on understanding and improving the robustness and privacy of large language model (LLM) systems.</p>
             </section>
 
+            <!-- Research Interests -->
             <section id="research-interests">
-                <h2>Research Interests</h2>
+                <h2><span class="section-icon"><i class="fas fa-flask"></i></span>Research Interests</h2>
                 <div class="interest-tags">
-                    <span class="tag">AI Security</span>
-                    <span class="tag">Adversarial Machine Learning</span>
-                    <span class="tag">Trustworthy AI</span>
+                    <span class="tag"><i class="fas fa-shield-alt"></i>&nbsp;AI Security</span>
+                    <span class="tag"><i class="fas fa-robot"></i>&nbsp;Adversarial Machine Learning</span>
+                    <span class="tag"><i class="fas fa-lock"></i>&nbsp;Trustworthy AI</span>
+                    <span class="tag"><i class="fas fa-brain"></i>&nbsp;LLM Robustness &amp; Privacy</span>
                 </div>
-                <p>My current research focuses on the intersection of artificial intelligence and security, specifically investigating the robustness and privacy of LLM systems.</p>
             </section>
 
+            <!-- Biography -->
             <section id="biography">
-                <h2>Biography</h2>
-                <ul>
-                    <li><strong>2022 - 2026:</strong> B.Eng. in Software Engineering, Fudan University.</li>
-                    <li><strong>2026 - Present:</strong> PhD Student, HKUST.</li>
-                </ul>
+                <h2><span class="section-icon"><i class="fas fa-landmark"></i></span>Biography</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-year">2026 – Present</span>
+                            <p class="timeline-title">PhD Student in Computer Science &amp; Engineering</p>
+                            <p class="timeline-place"><i class="fas fa-university"></i>&nbsp;The Hong Kong University of Science and Technology (HKUST)</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-year">2022 – 2026</span>
+                            <p class="timeline-title">B.Eng. in Software Engineering</p>
+                            <p class="timeline-place"><i class="fas fa-university"></i>&nbsp;Fudan University</p>
+                        </div>
+                    </div>
+                </div>
             </section>
 
+            <!-- Services -->
             <section id="services">
-                <h2>Services</h2>
-                <ul>
-                    <li>Sub-Reviewer, ACL 2025 | Sub-Reviewer, CCS 2026</li>
-                </ul>
+                <h2><span class="section-icon"><i class="fas fa-handshake"></i></span>Services</h2>
+                <div class="service-list">
+                    <div class="service-item">
+                        <span class="service-badge">Sub-Reviewer</span>
+                        <span class="service-venue">ACL 2025</span>
+                        <span class="service-type">Annual Meeting of the Association for Computational Linguistics</span>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-badge">Sub-Reviewer</span>
+                        <span class="service-venue">CCS 2026</span>
+                        <span class="service-type">ACM Conference on Computer and Communications Security</span>
+                    </div>
+                </div>
             </section>
 
+            <!-- Publications -->
             <section id="publications">
-                <h2>Publications</h2>
-                <p id="citation-stat" style="font-style: italic; color: #666;"></p>
+                <h2><span class="section-icon"><i class="fas fa-book-open"></i></span>Publications</h2>
                 <div id="publication-list">
-                    <p>Loading publications from Google Scholar...</p>
+                    <div class="pub-skeleton">
+                        <div class="skeleton-line long"></div>
+                        <div class="skeleton-line medium"></div>
+                        <div class="skeleton-line short"></div>
+                    </div>
                 </div>
             </section>
         </main>
 
         <footer>
-            <p>&copy; Last updated: February 2026.</p>
+            <p><i class="far fa-copyright"></i> Zhixiang Zhang &nbsp;·&nbsp; Last updated: February 2026</p>
         </footer>
     </div>
 
@@ -72,32 +135,45 @@
                 return response.json();
             })
             .then(data => {
-                
-
-                // Render publications
                 const container = document.getElementById('publication-list');
-                container.innerHTML = ''; // Clear loading text
+                container.innerHTML = '';
 
                 if (data.publications && data.publications.length > 0) {
-                    data.publications.forEach(pub => {
+                    data.publications.forEach((pub, idx) => {
                         const item = document.createElement('div');
                         item.className = 'pub-item';
-                        item.style.marginBottom = '15px';
                         item.innerHTML = `
-                            <strong>${pub.title}</strong><br>
-                            <span style="font-size: 0.9em;">${pub.authors}</span><br>
-                            <span style="color: #666; font-size: 0.85em;">${pub.venue} ${pub.year}</span>
+                            <div class="pub-index">[${idx + 1}]</div>
+                            <div class="pub-body">
+                                <p class="pub-title">${pub.title}</p>
+                                <p class="pub-authors">${pub.authors}</p>
+                                <p class="pub-venue"><i class="fas fa-book"></i>&nbsp;${pub.venue} <strong>${pub.year}</strong></p>
+                            </div>
                         `;
                         container.appendChild(item);
                     });
                 } else {
-                    container.innerHTML = '<p>Check back soon for new publications.</p>';
+                    container.innerHTML = '<p class="pub-empty">Check back soon for new publications.</p>';
                 }
+
             })
-            .catch(err => {
-                console.log('Using default content as results.json is not found yet.');
-                document.getElementById('publication-list').innerHTML = '<p>Check my Google Scholar for the latest updates.</p>';
+            .catch(() => {
+                document.getElementById('publication-list').innerHTML =
+                    '<p class="pub-empty">Check my <a href="https://scholar.google.com/citations?user=EkCwgfYAAAAJ" target="_blank">Google Scholar</a> for the latest updates.</p>';
             });
+
+        /* Smooth active nav highlight on scroll */
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(sec => {
+                if (window.scrollY >= sec.offsetTop - 80) current = sec.getAttribute('id');
+            });
+            navLinks.forEach(a => {
+                a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+            });
+        });
     </script>
 </body>
 </html>
