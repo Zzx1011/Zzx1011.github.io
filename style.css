@@ -427,6 +427,11 @@ h2 {
     margin-bottom: 4px;
 }
 
+.pub-authors strong {
+    color: var(--navy);
+    font-weight: 700;
+}
+
 .pub-venue {
     font-size: .82rem;
     color: var(--muted);
