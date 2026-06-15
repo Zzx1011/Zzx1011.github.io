@@ -2,6 +2,13 @@
     "cit_total": 4,
     "publications": [
         {
+            "title": "When Alignment Isn\u2019t Enough: Response-Path Attacks on LLM Agents",
+            "authors": "Mingyu Luo and Zihan Zhang and Zesen Liu and Yuchong Xie and Zhixiang Zhang and Dung Hiu Hilton Yeung and Wai Ip Lai and Ping Chen and Ming Wen and Dongdong She",
+            "venue": "arXiv preprint arXiv:2605.02187",
+            "year": 2026,
+            "num_citations": 0
+        },
+        {
             "title": "Exploit tool invocation prompt for tool behavior hijacking in llm-based agentic system",
             "authors": "Yu Liu and Yuchong Xie and Mingyu Luo and Zesen Liu and Zhixiang Zhang and Kaikai Zhang and Zongjie Li and Ping Chen and Shuai Wang and Dongdong She",
             "venue": "arXiv e-prints",
@@ -18,9 +25,10 @@
         {
             "title": "From Similarity to Vulnerability: Key Collision Attack on LLM Semantic Caching",
             "authors": "Zhixiang Zhang and Zesen Liu and Yuchong Xie and Quanfeng Huang and Dongdong She",
-            "venue": "arXiv preprint arXiv:2601.23088",
+            "venue": "International Conference on Machine Learning (ICML)",
             "year": 2026,
-            "num_citations": 0
+            "num_citations": 0,
+            "status": "Accepted"
         },
         {
             "title": "CompressionAttack: Exploiting Prompt Compression as a New Attack Surface in LLM-Powered Agents",

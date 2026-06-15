@@ -97,13 +97,28 @@
                 <h2><span class="section-icon"><i class="fas fa-handshake"></i></span>Services</h2>
                 <div class="service-list">
                     <div class="service-item">
-                        <span class="service-badge">Sub-Reviewer</span>
+                        <span class="service-badge">Reviewer</span>
                         <span class="service-venue">ACL 2025</span>
                         <span class="service-type">Annual Meeting of the Association for Computational Linguistics</span>
                     </div>
                     <div class="service-item">
+                        <span class="service-badge">Reviewer</span>
+                        <span class="service-venue">ICML 2026</span>
+                        <span class="service-type">International Conference on Machine Learning</span>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-badge">Sub-Reviewer</span>
+                        <span class="service-venue">ASE 2026</span>
+                        <span class="service-type">IEEE/ACM International Conference on Automated Software Engineering</span>
+                    </div>
+                    <div class="service-item">
                         <span class="service-badge">Sub-Reviewer</span>
                         <span class="service-venue">CCS 2026</span>
+                        <span class="service-type">ACM Conference on Computer and Communications Security</span>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-badge">Sub-Reviewer</span>
+                        <span class="service-venue">CCS 2026 (Second Round)</span>
                         <span class="service-type">ACM Conference on Computer and Communications Security</span>
                     </div>
                     <div class="service-item">
@@ -128,7 +143,7 @@
         </main>
 
         <footer>
-            <p><i class="far fa-copyright"></i> Zhixiang Zhang &nbsp;·&nbsp; Last updated: February 2026</p>
+            <p><i class="far fa-copyright"></i> Zhixiang Zhang &nbsp;·&nbsp; Last updated: June 2026</p>
         </footer>
     </div>
 
@@ -145,12 +160,18 @@
 
                 if (data.publications && data.publications.length > 0) {
                     data.publications.forEach((pub, idx) => {
+                        const statusMarkup = pub.status
+                            ? `<span class="pub-badge">${pub.status}</span>`
+                            : '';
                         const item = document.createElement('div');
                         item.className = 'pub-item';
                         item.innerHTML = `
                             <div class="pub-index">[${idx + 1}]</div>
                             <div class="pub-body">
-                                <p class="pub-title">${pub.title}</p>
+                                <div class="pub-title-row">
+                                    <p class="pub-title">${pub.title}</p>
+                                    ${statusMarkup}
+                                </div>
                                 <p class="pub-authors">${pub.authors}</p>
                                 <p class="pub-venue"><i class="fas fa-book"></i>&nbsp;${pub.venue} <strong>${pub.year}</strong></p>
                             </div>

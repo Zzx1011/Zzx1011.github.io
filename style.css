@@ -399,6 +399,28 @@ h2 {
     margin-bottom: 5px;
 }
 
+.pub-title-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.pub-badge {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: #ecfeff;
+    color: #0f766e;
+    border: 1px solid #a5f3fc;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+}
+
 .pub-authors {
     font-size: .875rem;
     color: var(--text);
@@ -477,4 +499,9 @@ footer i { color: var(--blue); }
     .service-item { flex-wrap: wrap; }
 
     .pub-item { flex-direction: column; gap: 8px; }
+
+    .pub-title-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
