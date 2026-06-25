@@ -158,7 +158,8 @@
                 venue: "International Conference on Machine Learning (ICML)",
                 year: 2026,
                 num_citations: 0,
-                status: "Accepted"
+                status: "Accepted",
+                ccfA: true
             },
             {
                 title: "CompressionAttack: Exploiting Prompt Compression as a New Attack Surface in LLM-Powered Agents",
@@ -166,7 +167,8 @@
                 venue: "IEEE/ACM International Conference on Automated Software Engineering (ASE)",
                 year: 2026,
                 num_citations: 0,
-                status: "Accepted"
+                status: "Accepted",
+                ccfA: true
             },
             {
                 title: "When Alignment Isn’t Enough: Response-Path Attacks on LLM Agents",
@@ -192,9 +194,11 @@
             {
                 title: "Red-Teaming Coding Agents from a Tool-Invocation Perspective: An Empirical Security Assessment",
                 authors: "Yuchong Xie and Mingyu Luo and Zesen Liu and Zhixiang Zhang and Kaikai Zhang and Yu Liu and Zongjie Li and Ping Chen and Shuai Wang and Dongdong She",
-                venue: "arXiv preprint arXiv:2509.05755",
-                year: 2025,
-                num_citations: 0
+                venue: "ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA)",
+                year: 2026,
+                num_citations: 0,
+                status: "Accepted",
+                ccfA: true
             }
         ];
 
@@ -208,9 +212,10 @@
 
             if (publications.length > 0) {
                 publications.forEach((pub, idx) => {
-                    const statusMarkup = pub.status
-                        ? `<span class="pub-badge">${pub.status}</span>`
-                        : '';
+                    const badges = [];
+                    if (pub.status) badges.push(`<span class="pub-badge">${pub.status}</span>`);
+                    if (pub.ccfA) badges.push(`<span class="pub-badge pub-badge-secondary">CCF-A</span>`);
+                    const statusMarkup = badges.join('');
                     const item = document.createElement('div');
                     item.className = 'pub-item';
                     item.innerHTML = `
@@ -231,7 +236,14 @@
             }
         }
 
-        renderPublications(publications);
+        const sortedPublications = [...publications].sort((a, b) => {
+            const aAccepted = Boolean(a.status);
+            const bAccepted = Boolean(b.status);
+            if (aAccepted !== bAccepted) return aAccepted ? -1 : 1;
+            return b.year - a.year;
+        });
+
+        renderPublications(sortedPublications);
 
         /* Smooth active nav highlight on scroll */
         const sections = document.querySelectorAll('section[id]');
