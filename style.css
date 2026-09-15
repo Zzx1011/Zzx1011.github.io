@@ -397,13 +397,15 @@ h2 {
     color: var(--navy);
     line-height: 1.45;
     margin-bottom: 5px;
+    flex: 1 1 100%;
 }
 
 .pub-title-row {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 10px;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    row-gap: 6px;
 }
 
 .pub-badge {

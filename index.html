@@ -163,12 +163,13 @@
                 ccfA: true
             },
             {
-                title: "CompressionAttack: Exploiting Prompt Compression as a New Attack Surface in LLM-Powered Agents",
+                title: "When Compression Becomes an Attack Surface: Black-Box Attacks on Prompt-Compressed LLM Agents",
                 authors: "Zesen Liu and Zhixiang Zhang and Yuchong Xie and Dongdong She",
                 venue: "IEEE/ACM International Conference on Automated Software Engineering (ASE)",
                 year: 2026,
                 num_citations: 0,
                 status: "Accepted",
+                award: "ACM Distinguished Paper Award",
                 ccfA: true
             },
             {
@@ -215,6 +216,7 @@
                 publications.forEach((pub, idx) => {
                     const badges = [];
                     if (pub.status) badges.push(`<span class="pub-badge">${pub.status}</span>`);
+                    if (pub.award) badges.push(`<span class="pub-badge pub-badge-award" style="background-color:#d4af37;color:#000;">🏆 ${pub.award}</span>`);
                     if (pub.ccfA) badges.push(`<span class="pub-badge pub-badge-secondary">CCF-A</span>`);
                     const statusMarkup = badges.join('');
                     const item = document.createElement('div');
