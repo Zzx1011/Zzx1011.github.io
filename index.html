@@ -201,11 +201,50 @@
                 num_citations: 0,
                 status: "Accepted",
                 ccfA: true
+            },
+            {
+                title: "Cheap to Hypothesize, Costly to Verify: The Defense Surface of Agentic Vulnerability Discovery",
+                authors: "Kaikai Zhang and Zihan Zhang and Yuchong Xie and Zesen Liu and Shuangjie Yao and Zhixiang Zhang and Dongdong She",
+                venue: "arXiv preprint arXiv:2609.35909",
+                year: 2026,
+                num_citations: 0
+            },
+            {
+                title: "Similarity Is Not Validity: Defending LLM Semantic Caches Against Poisoning",
+                authors: "Zihan Zhang and Shuangjie Yao and Zesen Liu and Zhixiang Zhang and Wai Ip Lai and Dung Hiu Hilton Yeung and Chun Kit Zhang and Fuchen Ma and Yuanyuan Yuan and Yu Jiang and Dongdong She",
+                venue: "arXiv preprint arXiv:2609.35908",
+                year: 2026,
+                num_citations: 0
+            },
+            {
+                title: "Compositional Safety Failures in Harness Evolution: Identification and Runtime Monitoring",
+                authors: "Zhixiang Zhang and Zesen Liu and Wai Ip Lai and Hongxu Chen and Dongdong She",
+                venue: "arXiv preprint arXiv:2609.33123",
+                year: 2026,
+                num_citations: 0
             }
         ];
 
+        const publicationPriority = {
+            "From Similarity to Vulnerability: Key Collision Attack on LLM Semantic Caching": 0,
+            "When Compression Becomes an Attack Surface: Black-Box Attacks on Prompt-Compressed LLM Agents": 1,
+            "Red-Teaming Coding Agents from a Tool-Invocation Perspective: An Empirical Security Assessment": 2,
+            "Compositional Safety Failures in Harness Evolution: Identification and Runtime Monitoring": 3
+        };
+
         function formatAuthors(authors) {
-            return authors.replaceAll('Zhixiang Zhang', '<strong>Zhixiang Zhang</strong>');
+            const parts = authors.split(/\s+and\s+/).filter(Boolean);
+            let formatted = authors;
+
+            if (parts.length > 1) {
+                if (parts.length === 2) {
+                    formatted = `${parts[0]} and ${parts[1]}`;
+                } else {
+                    formatted = `${parts.slice(0, -1).join(', ')}, and ${parts[parts.length - 1]}`;
+                }
+            }
+
+            return formatted.replaceAll('Zhixiang Zhang', '<strong>Zhixiang Zhang</strong>');
         }
 
         function renderPublications(publications) {
@@ -240,6 +279,10 @@
         }
 
         const sortedPublications = [...publications].sort((a, b) => {
+            const aPriority = publicationPriority[a.title] ?? 999;
+            const bPriority = publicationPriority[b.title] ?? 999;
+            if (aPriority !== bPriority) return aPriority - bPriority;
+
             const aAccepted = Boolean(a.status);
             const bAccepted = Boolean(b.status);
             if (aAccepted !== bAccepted) return aAccepted ? -1 : 1;
